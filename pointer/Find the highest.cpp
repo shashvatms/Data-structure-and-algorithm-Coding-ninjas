@@ -29,3 +29,41 @@ Sample Input 2
 
 Sample Output 2
 4
+ 
+#include <bits/stdc++.h>
+using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
+int* findmax(int *ar,int n)
+{
+//     int maxind = 0;
+//     for(int i=0;i<n;i++){
+//         if(*(ar+i)>*(ar+maxind)){
+//             maxind = i;
+//         }
+//     }
+//     return *(ar+maxind);
+// }
+
+
+    int *max = ar;
+    for(int i=0;i<n;i++){
+        if(*max<*(ar+i)){
+            *max = *(ar+i);
+        }
+    }
+    return max;
+}
+int main()
+{
+   int n;
+   cin>>n;
+   int ar[n];
+   for(int i=0;i<n;i++)
+   {
+       cin>>ar[i];
+   }
+   int *ans =findmax(ar,n);
+   cout<<*ans;
+    
+}
